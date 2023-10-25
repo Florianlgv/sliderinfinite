@@ -27,18 +27,12 @@
                 type: 'loop',
                 drag: 'free',
                 focus: 'center',
-                perPage: 2,
                 permove: 1,
                 autoWidth: true,
                 arrows: false,
                 pagination: false,
                 lazyLoad: 'nearby',
                 gap: 2,
-                breakpoints: {
-                    400: {
-                        perPage: 1
-                    }
-                },
                 autoScroll: {
                     speed: 0.5,
                 },

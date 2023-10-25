@@ -26,24 +26,24 @@ class SliderInfinite extends Module
     {
         return parent::install()  &&
             $this->registerHook('header') &&
-            $this->registerHook('displayVideoLink');
+            $this->registerHook('displayInfiniteSlider');
     }
 
     public function uninstall()
     {
-        $this->unregisterHook('displayVideoLink');
+        $this->unregisterHook('displayInfiniteSlider');
 
         return parent::uninstall();
     }
 
     public function hookDisplayHeader()
     {
-        if (true) { //select controller page
+        if (true) { //$this->context->controller->php_self == 'category' && (int)Tools::getValue('id_category') == 3
             $this->context->controller->addCSS($this->_path . 'views/css/sliderinfinite.css', 'all');
         }
     }
 
-    public function hookDisplayVideoLink()
+    public function hookDisplayInfiniteSlider()
     {
         $imagesPath = _PS_MODULE_DIR_ . 'sliderinfinite/img/';
         $images = $this->getImagesFromDir($imagesPath);
